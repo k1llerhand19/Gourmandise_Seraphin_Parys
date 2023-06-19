@@ -3,8 +3,21 @@
 
 }
 body{
-    background-color:#272424
+    background-color:#272424;
 }
 
+#titreActualites{
+    text-align: center;
+    color: #BD905A;
+}
 
+#titre-slide{
+    color: #BD905A; 
+    text-shadow: 2px 2px #272424;
+    
+}
 
+#text-slide{
+    color: #BD905A; 
+    text-shadow: 2px 2px #272424;
+}
