@@ -6,7 +6,17 @@ body{
     background-color:#272424;
 }
 
-#titreActualites{
+#footer{
+    background-color: #BD905A;
+    
+}
+
+#btn-contact{
+    margin-left: 20px;
+    color: #272424;
+}
+
+#titre{
     text-align: center;
     color: #BD905A;
 }
@@ -21,3 +31,28 @@ body{
     color: #BD905A; 
     text-shadow: 2px 2px #272424;
 }
+
+#text-historique p{
+    color: #BD905A;
+    text-indent: 50px;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    background-color: #BD905A;
+    box-shadow: 5px 5px 5px white;
+    border-radius: 5px;
+  }
+  
+  .card h1 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+  }
+  
+ .card p {
+    font-size: 16px;
+    text-indent: 50px;
+    
+  }
