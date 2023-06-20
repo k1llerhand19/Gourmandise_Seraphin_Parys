@@ -3,19 +3,17 @@
 {% block title %}Gallerie{% endblock %}
 
 {% block body %}
-<br>
-<div class="container">
-    <h1 id="titre">Galerie de nos produits</h1><br>
-    
-    <div class="row">
-            {% for image in showimage %}
-                <div class="col-md-4">
-                    <img src="{{asset('assets/Images/' ~ image.name) }}" class="img-fluid" id="gallerie"> 
-                </div> 
-            {% endfor %}
+    <br>
+    <div class="container">
+        <h1 id="titre">Galerie de nos produits</h1><br>
+        
+        <div class="row">
+                {% for image in showimage %}
+                    <div class="col-md-4">
+                        <img src="{{asset('assets/Images/' ~ image.name) }}" class="img-fluid" id="gallerie"> 
+                    </div> 
+                {% endfor %}
+        </div>
+        <a id="text" href="{{ path('images.add')}}">Ajoutez</a>
     </div>
-    
-    <a id="text" href="{{ path('images.add')}}">Ajoutez</a>
-</div>
-
 {% endblock %}

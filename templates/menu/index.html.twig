@@ -1,30 +1,48 @@
 <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
-  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <ul class="navbar-nav navbar-dark mr-auto mt-2 mt-lg-0      ">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="{{path('app_accueil')}}"><img src="{{asset('assets/Images/logo/logo_1_2.png') }}" width="80" height="80" alt="" ></a>
+  <a class="navbar-brand" href="#"><img src="{{asset('assets/Images/logo/logo_1_2.png') }}" width="80" height="80" alt="" ></a>
 
-  <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="btn" href="{{path('app_accueil')}}">Accueil <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item ">
-        <a class=" btn " href="{{path('app_historique')}}">Historique</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn" href="{{path('app_demarche')}}">Démarche</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn" href="{{path('app_gallerie')}}">Gallerie</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn" href="{{path('app_mention_legale')}}">Mention Légale</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn" href="{{path('app_plan_site')}}">Plan du site</a>
-      </li>
-    </ul>
+      {% if app.user %}
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <ul class="navbar-nav navbar-dark mr-auto mt-2 mt-lg-0      ">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="btn" href="{{path('app_accueil')}}">Accueil <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ">
+            <a class=" btn " href="{{path('app_historique')}}">Historique</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="{{path('app_demarche')}}">Démarche</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="{{path('app_gallerie')}}">Gallerie</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="{{path('app_mention_legale')}}">Mention Légale</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="{{path('app_plan_site')}}">Plan du site</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="btn" href="{{path('app_logout')}}">Déconnexion</a>
+          </li>
+        </ul>
+      {% else %}
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="btn" href="{{path('app_login')}}">Me connecter</a>
+          </li>
+        </ul>
+      {% endif %}
+      
+    
   </div>
 </nav>
