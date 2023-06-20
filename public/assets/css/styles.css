@@ -1,32 +1,21 @@
 .navbar{
     background-color: #BD905A;
-
 }
 body{
     background-color:#272424;
 }
 
 #footer{
-    background-color: #BD905A;
-    
+    background-color: #BD905A;  
 }
-
-
 
 #titre{
     text-align: center;
     color: #BD905A;
 }
-
-#titre-slide{
+#slide{
     color: #BD905A; 
-    text-shadow: 2px 2px #272424;
-    
-}
-
-#text-slide{
-    color: #BD905A; 
-    text-shadow: 2px 2px #272424;
+    text-shadow: 2px 2px #272424; 
 }
 
 #text-historique p{
@@ -51,10 +40,9 @@ body{
  .card p {
     font-size: 16px;
     text-indent: 50px;
-    
   }
 
-#mention {
+#text {
     color: #BD905A;
 }
 
@@ -64,9 +52,7 @@ body{
     color: #272424;
 }
 
-#form{
-    color: #BD905A;
-}
+
 
 #btn{
     background-color: #BD905A;
@@ -82,4 +68,8 @@ body{
     margin-bottom:20px;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #BD905A;
+}
+
+#btn-plan{
+    font-size: 18px;
 }

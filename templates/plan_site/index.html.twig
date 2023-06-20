@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plan du site{% endblock %}
+
+{% block body %}
+<br>
+<h1 id='titre'>Plan du site</h1>
+<br><br>
+<div id="text">
+    <div class="row" id="text">
+        <div class="col-md-6" id="colonne-1">
+            <h4><b>A propos de Gourmandise Séraphin Parys</b></h4>
+            <div id="btn-plan">
+                <a id="text" href="{{ path('app_accueil')}}">Accueil</a><br>
+                <a id="text" href="{{ path('app_historique')}}">Historique</a><br>
+                <a id="text" href="{{ path('app_demarche')}}">Démarche</a><br>
+                <a id="text" href="{{ path('app_mention_legale')}}">Mention Légale</a><br>
+                <a id="text" href="{{ path('app_contact')}}">Contacter Gourmandise Séraphin Parys</a><br>
+            </div>
+        </div>
+        <div class="col-md-6" id="colonne-1">
+            <h4><b>Ce qu'ont propose</b></h4>
+            <div id="btn-plan">
+                <a id="text" href="{{ path('app_gallerie')}}">Gallerie</a><br>
+            </div>
+        </div>    
+    </div>
+
+</div>
+{% endblock %}
