@@ -11,10 +11,7 @@ body{
     
 }
 
-#btn-contact{
-    margin-left: 20px;
-    color: #272424;
-}
+
 
 #titre{
     text-align: center;
@@ -56,3 +53,33 @@ body{
     text-indent: 50px;
     
   }
+
+#mention {
+    color: #BD905A;
+}
+
+
+#btn-contact{
+    margin-left: 20px;
+    color: #272424;
+}
+
+#form{
+    color: #BD905A;
+}
+
+#btn{
+    background-color: #BD905A;
+}
+
+#map{
+    width:600;
+    height:450 ;
+    margin-top:10px;
+}
+
+#gallerie{
+    margin-bottom:20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #BD905A;
+}
