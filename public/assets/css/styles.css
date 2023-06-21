@@ -73,3 +73,9 @@ body{
 #btn-plan{
     font-size: 18px;
 }
+
+#message-erreur{
+    background-color: #BD905A;
+    text-align: center;
+    color: #272424;
+}
