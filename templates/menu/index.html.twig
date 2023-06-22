@@ -11,6 +11,39 @@
         <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
+            <a class="btn" href="{{path('admin_accueil')}}">Accueil <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ">
+            <a class=" btn " href="{{path('admin_historique')}}">Historique</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="{{path('admin_demarche')}}">Démarche</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="{{path('admin_gallerie')}}">Gallerie</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="{{path('admin_mention_legale')}}">Mention Légale</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="{{path('admin_plan_site')}}">Plan du site</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="btn" href="{{path('app_logout')}}">Déconnexion</a>
+          </li>
+        </ul>
+      {% else %}
+
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <ul class="navbar-nav navbar-dark mr-auto mt-2 mt-lg-0      ">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
             <a class="btn" href="{{path('app_accueil')}}">Accueil <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item ">
@@ -30,17 +63,6 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="btn" href="{{path('app_logout')}}">Déconnexion</a>
-          </li>
-        </ul>
-      {% else %}
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="btn" href="{{path('app_login')}}">Me connecter</a>
-          </li>
-        </ul>
       {% endif %}
       
     

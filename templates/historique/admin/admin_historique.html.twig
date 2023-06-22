@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Historique{% endblock %}
+
+{% block body %}
+    <br>
+    <h1 id='titre'>Historique</h1>
+    <br><br>
+    <div id="Body">
+        <div id="text-historique">
+            {% for historique in showhistorique %}
+                <p>{{ historique.text }}</p>
+                <center>
+                    <a id="text" href="{{ path('historique.edit', {id: historique.id}) }}">Modifier</a>
+                    <form method="post" action="{{ path('historique.delete', {id: historique.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer l\'historique : \'{{ historique.text }}\' ?')">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ historique.id) }}">
+
+                        <button class="btn btn-danger"> supprimer
+                        <span class="bi bi-trash-fill"></span>
+                        </button>
+                    </form>
+                </center>
+                <br>
+            {% endfor %}
+
+        <a id="text" href="{{ path('historique.add')}}">Ajoutez</a>
+        </div>
+    </div>
+{% endblock %}

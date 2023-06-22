@@ -3,38 +3,14 @@
 {% block title %}Historique{% endblock %}
 
 {% block body %}
-        <br>
-        <h1 id='titre'>Historique</h1>
-        <br><br>
+    <br>
+    <h1 id='titre'>Historique</h1>
+    <br><br>
+    <div id="Body">
         <div id="text-historique">
-                <p>C’est à l’occasion d’un voyage en Angleterre en 1786 que le  jeune Séraphin Parys, à peine âgé de 20ans, rencontre l’industriel Joseph Storrs Fry, inventeur de génie 
-                        qui venait de faire naitre la passion du chocolat à travers toute l’Europe ! 
-                </p>
-
-                <p> De retour en France, il ne lui faudra pas moins de 25 ans pour donner naissance au concept de fabrication et de distribution de confiseries de luxe à base de 
-                        chocolat de grande qualité (avec un approvisionnement auprès des manufactures de J. S. Fry & Sons. à Bristol) Les « Sucreries Rochelaises » de Séraphin Parys 
-                        ouvrent en 1811 à La Rochelle. 
-                </p>
-
-                <p>Cette entreprise traverse avec succès et distinction les grandes crises du XIXème siècle. En 1900, Josette Parys, arrière-arrière-petite-fille de Séraphin, 
-                        aux commandes des « Sucreries Rochelaises », remportera une médaille d’Or lors de l’Exposition Universelle de Paris pour son produit phare le
-                        « Caracao » !
-                </p>
-
-                <p> Le début des années 30 avec la crise, le contexte de guerre, les pénuries d’aliments (farine, lait, oeufs, …) est très défavorable au commerce … en 1937, 
-                        les « Sucreries Rochelaises » ferment pour disparaitre à tout jamais.  
-                </p>
-
-                <p>A tout jamais ? … Non ! en 2015 Didière et Hadrien Parys, tous deux descendants de Séraphin et de Josette, décident de faire renaitre de leurs cendres les 
-                        procédés, les recettes, le raffinement d’antan, … des « Sucreries Rochelaises » !
-                </p>
-
-                <p>Depuis mars 2017 les ateliers, maintenant situés à Reims, en s’inscrivant dans une démarche Haute Qualité Environnementale, produisent 300 Kg de 
-                        « gourmandises » par jour, dont 200 à base de chocolat.
-                </p>
-
-                <p> La marque « Gourmandises, Séraphin Parys » propose ainsi une large gamme de sucreries raffinées. L’entreprise « Gourmandise-SARL » qui les produit dispose, 
-                        parallèlement à ses circuits de distribution, d’un espace de vente directe au 19 rue de Bioko à Reims dans la Marne.
-                </p>
+            {% for historique in showhistorique %}
+                <p>{{ historique.text }}</p>
+            {% endfor %}
         </div>
+    </div>
 {% endblock %}

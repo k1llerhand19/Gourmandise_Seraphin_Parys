@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gallerie{% endblock %}
+
+{% form_theme form_image 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <br>
+    <div id="text">
+        <div class="container">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <h1>Gallerie</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row" >
+                <div class="col-4" id="colonne-1"></div>
+                <div class="col 4" id="colonne-1">
+                    <br>
+                    <h3>Ajouter :</h3>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-4" id="colonne-1"></div>
+                <div class="col-4" id="colonne-1" >
+
+                    {{form_start(form_image)}}
+
+                    {{form_row(form_image.name, {'attr' : {'placeholder' : "Nom de l'image"}})}}
+
+                    <button  type="submit" class="btn" id='btn'>
+                        Modifier
+                    </button>
+
+
+                    {{form_end(form_image)}}
+                </div>
+            </div>
+        </div> 
+    </div>
+{% endblock %}

@@ -25,24 +25,5 @@ class GallerieController extends AbstractController
         ]);
     }
 
-    #[Route('gallerie/ajouter', name: 'images.add')]
-    public function AjouterAlimRequest(Request $request,  EntityManagerInterface $manager): Response
-    {   $image = new Image();
-        $form_image = $this->createForm(ImageFormType::class,$image);
-        $form_image -> handleRequest($request);
     
-        if( $form_image->isSubmitted() && $form_image->isValid()){
-            
-            $manager->persist($image);
-            $manager->flush();
-
-            return $this->redirectToRoute('app_gallerie',[
-            ]);
-        }
-
-
-        return $this->render('gallerie/ajouteImages.html.twig', [
-            'form_image' => $form_image->createView()
-        ]);
-    }
 }

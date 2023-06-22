@@ -6,7 +6,7 @@ body{
 }
 
 #footer{
-    background-color: #BD905A;  
+    background-color: #BD905A; 
 }
 
 #titre{
@@ -46,6 +46,10 @@ body{
     color: #BD905A;
 }
 
+#text-noir{
+    color: #272424;
+}
+
 
 #btn-contact{
     margin-left: 20px;
@@ -56,6 +60,8 @@ body{
 
 #btn{
     background-color: #BD905A;
+    margin-top: 20px ;
+    margin-bottom: 50px ;
 }
 
 #map{
@@ -78,4 +84,8 @@ body{
     background-color: #BD905A;
     text-align: center;
     color: #272424;
+}
+
+#Body{
+    margin-bottom: 100px;
 }

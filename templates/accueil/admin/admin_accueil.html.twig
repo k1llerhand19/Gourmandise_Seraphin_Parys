@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<br>
+<h1 id='titre'>Actualités</h1>
+<br><br>
+<div id="Body">
+  <div id="carouselActualites" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Boucle d'articles -->
+          {% for actu in showactualites %}
+          <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
+              <img class="d-block w-100" src="{{asset('assets/Images/' ~ actu.nomImage) }}">
+              <div class="carousel-caption">
+              <h3 id="slide">{{ actu.titre }}</h3>
+              <h5 id="slide">{{ actu.description }}</h3>
+              </div>
+          </div>
+          {% endfor %}
+    </div>
+    
+
+    <a class="carousel-control-prev" href="#carouselActualites" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+
+    <a class="carousel-control-next" href="#carouselActualites" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="col-lg-12">
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <tbody>
+            <tr class="align-middle text-center">
+                <th class="text-nowrap" id="slide">Images</th>
+                <th class="text-nowrap" id="slide">Titre</th>
+                <th class="text-nowrap" id="slide">Description</th>
+                <th class="text-nowrap" id="slide">Actions</th>
+            </tr>            
+            {% for actu in showactualites %}
+              <tr class="align-middle text-center">
+                <td class="text-nowrap" ><img class="d-block w-100" src="{{asset('assets/Images/' ~ actu.nomImage) }}"></td>
+                <td class="text-nowrap" id="slide">{{ actu.titre }}</td>
+                <td class="text-nowrap" id="slide">{{ actu.description }}</td>
+                <td class="text-nowrap">
+                    <a id="text" href="{{ path('actualites.edit', {id: actu.id}) }}">Modifier</a>
+                    
+                    <form method="post" action="{{ path('actualites.delete', {id: actu.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer l\'alimentation : \'{{ actu.nomImage }}\' ?')">
+                      <input type="hidden" name="_method" value="DELETE">
+                      <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ actu.id) }}">
+
+                      <button class="btn btn-danger"> supprimer
+                        <span class="bi bi-trash-fill"></span>
+                      </button>
+
+                    </form>
+
+                    <span class="badge text-bg-danger"></span>
+                </td>
+              </tr>
+            {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <a id="text" href="{{ path('actualites.add')}}">Ajoutez</a>
+
+</div>
+
+{% endblock %}

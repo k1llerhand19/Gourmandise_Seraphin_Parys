@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Historique{% endblock %}
+
+{% form_theme form_historique 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <br>
+    <div id="text">
+        <div class="container">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <h1>Historique</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row" >
+                <div class="col-4" id="colonne-1"></div>
+                <div class="col 4" id="colonne-1">
+                    <br>
+                    <h3>ajouter :</h3>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-4" id="colonne-1"></div>
+                <div class="col-4" id="colonne-1" >
+
+                    {{form_start(form_historique)}}
+
+                    {{form_row(form_historique.text, {'attr' : {'placeholder' : "Saisir le text"}})}}
+
+                    <button  type="submit" class="btn" id='btn'>
+                        Enregistrer
+                    </button>
+
+
+                    {{form_end(form_historique)}}
+                </div>
+            </div>
+        </div> 
+    </div>
+{% endblock %}

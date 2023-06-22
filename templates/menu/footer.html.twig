@@ -1,5 +1,11 @@
 <footer class="footer fixed-bottom navbar-dark " id='footer'>
+{% if app.user %}
   <ul class="navbar-nav ">
+    <a class="navbar-brand" href="{{path('admin_contact')}}" id='btn-contact'>Nous contacter</a>
+  </ul>
+{% else %}
+  <ul class="navbar-nav ">  
     <a class="navbar-brand" href="{{path('app_contact')}}" id='btn-contact'>Nous contacter</a>
   </ul>
+{% endif %} 
 </footer>

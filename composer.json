@@ -4,6 +4,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
+        "sensio/framework-extra-bundle": "^6.1",
         "php": ">=8.0.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
