@@ -6,8 +6,6 @@ use App\Repository\ContactRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-use Symfony\Component\Validator\Constraints as Assert;
-
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
 {
@@ -16,21 +14,25 @@ class Contact
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50, nullable: true)]
+    #[ORM\Column(length: 50)]
     private ?string $fullName = null;
 
     #[ORM\Column(length: 180)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 50, nullable: true)]
+    #[ORM\Column(length: 50)]
     private ?string $subject = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
     #[ORM\Column]
-    #[Assert\NotNull()]
     private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\ManyToOne(inversedBy: 'Etat_Id')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Etat $Etat = null;
+
 
     public function __construct()
     {
@@ -47,7 +49,7 @@ class Contact
         return $this->fullName;
     }
 
-    public function setFullName(?string $fullName): static
+    public function setFullName(string $fullName): static
     {
         $this->fullName = $fullName;
 
@@ -71,7 +73,7 @@ class Contact
         return $this->subject;
     }
 
-    public function setSubject(?string $subject): static
+    public function setSubject(string $subject): static
     {
         $this->subject = $subject;
 
@@ -90,15 +92,29 @@ class Contact
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCretedAt(): ?\DateTimeImmutable
     {
-        return $this->createdAt;
+        return $this->cretedAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    public function setCretedAt(\DateTimeImmutable $cretedAt): static
     {
-        $this->createdAt = $createdAt;
+        $this->cretedAt = $cretedAt;
 
         return $this;
     }
+
+    public function getEtat(): ?Etat
+    {
+        return $this->Etat;
+    }
+
+    public function setEtat(?Etat $Etat): static
+    {
+        $this->Etat = $Etat;
+
+        return $this;
+    }
+
+
 }

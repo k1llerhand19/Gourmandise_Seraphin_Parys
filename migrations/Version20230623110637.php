@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20230620085413 extends AbstractMigration
+final class Version20230623110637 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,12 +20,16 @@ final class Version20230620085413 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE image (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(100) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE contact ADD etat_id INT NOT NULL');
+        $this->addSql('ALTER TABLE contact ADD CONSTRAINT FK_4C62E638D5E86FF FOREIGN KEY (etat_id) REFERENCES etat_ticket (id)');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_4C62E638D5E86FF ON contact (etat_id)');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE image');
+        $this->addSql('ALTER TABLE contact DROP FOREIGN KEY FK_4C62E638D5E86FF');
+        $this->addSql('DROP INDEX UNIQ_4C62E638D5E86FF ON contact');
+        $this->addSql('ALTER TABLE contact DROP etat_id');
     }
 }

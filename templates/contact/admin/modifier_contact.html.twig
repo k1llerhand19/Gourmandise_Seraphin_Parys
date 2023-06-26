@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+    <h1 id='titre'>Contact</h1>
+
+    <div class="row" id="text">
+        <div class="col-4" id="colonne-1"></div>
+        <div class="col-4" id="colonne-1">
+
+            {{form_start(form_contact)}}
+                {{form_row(form_contact.Etat, {'attr' : {'placeholder' : "Message"}})}}
+                
+                                
+                <button  type="submit" class="btn" id='btn'>
+                        Soumettre ma demande
+                </button>
+                
+            {{form_end(form_contact)}}
+        </div>    
+    </div> 
+</div>
+{% endblock %}
