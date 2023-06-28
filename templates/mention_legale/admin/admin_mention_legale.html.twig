@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mention Légale{% endblock %}
+
+{% block body %}
+<br>
+<h1 id='titre'>Mention Légale</h1>
+<br><br>
+<div id="Body">
+        <div id="text">
+            {% for mention_legale in showmentionlegale %}
+                <H2>{{ mention_legale.Titre }}</H2>
+                <p>{{ mention_legale.Text }}</p>
+                <center>
+                    <a id="text" href="{{ path('mention_legale.edit', {id: mention_legale.id}) }}">Modifier</a>
+
+                    <form method="post" action="{{ path('mention_legale.delete', {id: mention_legale.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer l\'historique : \'{{ mention_legale.text }}\' ?')">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ mention_legale.id) }}">
+
+                        <button class="btn btn-danger"> supprimer
+                            <span class="bi bi-trash-fill"></span>
+                        </button>
+                    </form>
+                </center>
+                    <br>
+            {% endfor %}
+        </div>
+     <a id="text" href="{{ path('mention_legale.add')}}">Ajoutez</a>
+</div>
+
+
+{% endblock %}

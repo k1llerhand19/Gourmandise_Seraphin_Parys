@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Mention légale{% endblock %}
 
-{% form_theme form_actu 'bootstrap_4_layout.html.twig' %}
+{% form_theme form_mentionlegale 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
     <br>
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4">
-                    <h1>Actualités</h1>
+                    <h1>Mention légale</h1>
                 </div>
             </div>
         </div>
@@ -29,18 +29,17 @@
                 <div class="col-4" id="colonne-1"></div>
                 <div class="col-4" id="colonne-1" >
 
-                    {{form_start(form_actu)}}
+                    {{form_start(form_mentionlegale)}}
 
-                    {{form_row(form_actu.nomImage, {'attr' : {'placeholder' : "Nom de l'image"}})}}
-                    {{form_row(form_actu.Titre, {'attr' : {'placeholder' : "Titre a afficher"}})}}
-                    {{form_row(form_actu.Description, {'attr' : {'placeholder' : "Description"}})}}
+                    {{form_row(form_mentionlegale.Titre, {'attr' : {'placeholder' : "Modifier le Titre"}})}}
+                    {{form_row(form_mentionlegale.Text, {'attr' : {'placeholder' : "Modifier le Text"}})}}
 
                     <button  type="submit" class="btn" id='btn'>
                         Modifier
                     </button>
 
 
-                    {{form_end(form_actu)}}
+                    {{form_end(form_mentionlegale)}}
                 </div>
             </div>
         </div> 
