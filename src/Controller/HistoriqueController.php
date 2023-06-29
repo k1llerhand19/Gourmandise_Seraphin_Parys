@@ -13,12 +13,12 @@ use App\Form\HistoriqueFormType;
 class HistoriqueController extends AbstractController
 {
     #[Route('/historique', name: 'app_historique')]
-    public function index(HistoriqueRepository $historiquerepo): Response
+    public function index(HistoriqueRepository $historiqueRepository): Response
     {
-        $showhistorique = $historiquerepo->findBy([],['id' => 'ASC']);
+        $showHistorique = $historiqueRepository->findBy([],['id' => 'ASC']);
 
         return $this->render('historique/index.html.twig', [
-            'showhistorique' => $showhistorique,
+            'showHistorique' => $showHistorique,
         ]);
     }
 }

@@ -54,8 +54,6 @@ class AdminHistoriqueController extends AbstractController
         {
             $entityManager->remove($historique);
             $entityManager->flush();
-
-            //$this->addFlash('success', "Le serveur a bien été supprimé !");
         }
 
         return $this->redirectToRoute('admin_historique');

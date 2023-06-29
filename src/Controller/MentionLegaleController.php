@@ -17,12 +17,12 @@ use Symfony\Component\HttpFoundation\Request;
 class MentionLegaleController extends AbstractController
 {
     #[Route('/mention/legale', name: 'app_mention_legale')]
-    public function index(MentionlegaleRepository $mentionlegalerepo): Response
+    public function index(MentionlegaleRepository $mentionlegaleRepository): Response
     {
-        $showmentionlegale = $mentionlegalerepo->findBy([],['id' => 'ASC']);
+        $showMentionLegale = $mentionlegaleRepository->findBy([],['id' => 'ASC']);
 
         return $this->render('mention_legale/index.html.twig', [
-            'showmentionlegale' => $showmentionlegale,
+            'showMentionLegale' => $showMentionLegale,
         ]);
     }
 }

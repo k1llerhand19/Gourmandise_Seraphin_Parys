@@ -47,8 +47,6 @@ class AdminContactController extends AbstractController
         {
             $entityManager->remove($contact);
             $entityManager->flush();
-
-            //$this->addFlash('success', "Le serveur a bien été supprimé !");
         }
 
         return $this->redirectToRoute('admin_contact');

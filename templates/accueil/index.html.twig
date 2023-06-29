@@ -10,7 +10,7 @@
   <div id="carouselActualites" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <!-- Boucle d'articles -->
-          {% for actu in showactualites %}
+          {% for actu in showActualites %}
           <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
               <img class="d-block w-100" src="{{asset('assets/Images/' ~ actu.nomImage) }}">
               <div class="carousel-caption">

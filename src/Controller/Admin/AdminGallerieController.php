@@ -55,8 +55,6 @@ class AdminGallerieController extends AbstractController
         {
             $entityManager->remove($image);
             $entityManager->flush();
-
-            //$this->addFlash('success', "Le serveur a bien été supprimé !");
         }
 
         return $this->redirectToRoute('admin_gallerie');

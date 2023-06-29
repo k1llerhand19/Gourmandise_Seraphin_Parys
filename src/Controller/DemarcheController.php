@@ -16,12 +16,12 @@ use Symfony\Component\HttpFoundation\Request;
 class DemarcheController extends AbstractController
 {
     #[Route('/demarche', name: 'app_demarche')]
-    public function demarche(DemarcheRepository $demarcherepo): Response
+    public function demarche(DemarcheRepository $demarcheRepository): Response
     {
-        $showdemarche = $demarcherepo->findBy([],['id' => 'ASC']);
+        $showDemarche = $demarcheRepository->findBy([],['id' => 'ASC']);
 
         return $this->render('demarche/index.html.twig', [
-            'showdemarche' => $showdemarche,
+            'showDemarche' => $showDemarche,
         ]);
     }
 }

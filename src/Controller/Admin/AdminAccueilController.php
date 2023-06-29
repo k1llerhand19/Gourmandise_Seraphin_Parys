@@ -17,12 +17,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminAccueilController extends AbstractController
 {
     #[Route('/admin/accueil', name: 'admin_accueil')]
-    public function accueil(ActualitesRepository $actualitesrepo): Response
+    public function accueil(ActualitesRepository $actualitesRepo): Response
     {
-        $showactualites = $actualitesrepo->findBy([],['id' => 'DESC']);
+        $showActualites = $actualitesRepo->findBy([],['id' => 'DESC']);
 
         return $this->render('accueil/admin/admin_accueil.html.twig', [
-            'showactualites' => $showactualites,
+            'showActualites' => $showActualites,
         ]);
     }
 

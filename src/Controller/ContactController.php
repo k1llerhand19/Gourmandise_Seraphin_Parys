@@ -18,34 +18,32 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    public function index(Request $request,  EntityManagerInterface $manager, EtatRepository $etatctrepo): Response
+    public function index(Request $request, EntityManagerInterface $manager, EtatRepository $etatRepository): Response
     {
-        $etat=$etatctrepo->find(1);
+        $etat = $etatRepository->find(1);
 
         $contact = new Contact();
         $contact->setEtat($etat);
         
-        $formcontact = $this->createForm(ContactFormType::class, $contact);
-        $formcontact->handleRequest($request);
+        $formContact = $this->createForm(ContactFormType::class, $contact);
+        $formContact->handleRequest($request);
 
-        if( $formcontact->isSubmitted() && $formcontact->isValid()){
-
-            $contact = $formcontact->getData();
+        if ($formContact->isSubmitted() && $formContact->isValid()) {
+            $contact = $formContact->getData();
 
             $manager->persist($contact);
             $manager->flush();
 
             $this->addFlash(
-                'succes',
-                'Votre demande a bien été envoyer'
+                'success',
+                'Votre demande a bien été envoyée'
             );
 
-            return $this->redirectToRoute('app_contact',[
-            ]);
+            return $this->redirectToRoute('app_contact');
         }
 
         return $this->render('contact/index.html.twig', [
-            'formcontact' => $formcontact->createView() ,
+            'formcontact' => $formContact->createView(),
         ]);
     }
 }

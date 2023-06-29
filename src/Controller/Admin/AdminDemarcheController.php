@@ -55,8 +55,6 @@ class AdminDemarcheController extends AbstractController
         {
             $entityManager->remove($demarche);
             $entityManager->flush();
-
-            //$this->addFlash('success', "Le serveur a bien été supprimé !");
         }
 
         return $this->redirectToRoute('admin_demarche');

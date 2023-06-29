@@ -16,12 +16,12 @@ use App\Repository\ImageRepository;
 class GallerieController extends AbstractController
 {
     #[Route('/gallerie', name: 'app_gallerie')]
-    public function index(ImageRepository $imagerepo): Response
+    public function index(ImageRepository $imageRepository): Response
     {
-        $showimage = $imagerepo->findBy([],['id' => 'DESC']);
+        $showImages  = $imageRepository->findBy([],['id' => 'DESC']);
 
         return $this->render('gallerie/index.html.twig', [
-            'showimage' => $showimage,
+            'showImages' => $showImages,
         ]);
     }
 

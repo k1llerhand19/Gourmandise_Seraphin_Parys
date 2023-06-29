@@ -13,12 +13,12 @@ use App\Form\ActualitesFormType;
 class AccueilController extends AbstractController
 {
     #[Route('/accueil', name: 'app_accueil')]
-    public function index(ActualitesRepository $actualitesrepo): Response
+    public function index(ActualitesRepository $actualitesRepo): Response
     {
-        $showactualites = $actualitesrepo->findBy([],['id' => 'DESC']);
+        $showActualites = $actualitesRepo->findBy([],['id' => 'DESC']);
 
         return $this->render('accueil/index.html.twig', [
-            'showactualites' => $showactualites,
+            'showActualites' => $showActualites,
         ]);
     }
 }
