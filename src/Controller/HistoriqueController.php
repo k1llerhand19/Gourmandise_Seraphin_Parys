@@ -10,15 +10,22 @@ use App\Entity\Historique;
 use App\Repository\HistoriqueRepository;
 use App\Form\HistoriqueFormType;
 
+use App\Repository\ImageRepository;
+
 class HistoriqueController extends AbstractController
 {
     #[Route('/historique', name: 'app_historique')]
-    public function index(HistoriqueRepository $historiqueRepository): Response
+    public function index(HistoriqueRepository $historiqueRepository, ImageRepository $imageRepository): Response
     {
-        $showHistorique = $historiqueRepository->findBy([],['id' => 'ASC']);
+        $historique = $historiqueRepository->findBy([],['id' => 'ASC']);
+        $showHistoriques = array_chunk($historique, 3);
+
+        $images1  = $imageRepository->find(1);
 
         return $this->render('historique/index.html.twig', [
-            'showHistorique' => $showHistorique,
+            'showHistoriques' => $showHistoriques,
+            'images1' => $images1,
         ]);
     }
+
 }

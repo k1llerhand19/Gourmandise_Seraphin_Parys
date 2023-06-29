@@ -19,16 +19,52 @@ body{
 }
 
 #carte{
-    width: 10px;
+    width: 100px;
+    height: 100px;
     padding: 20px;
     background-color: #BD905A;
     box-shadow: 5px 5px 5px white;
     border-radius: 5px;
-    position: relative;
+    position: absolute;
+}
+#carte2{
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background-color: #BD905A;
+    box-shadow: 5px 5px 5px white;
+    border-radius: 5px;
+    position: absolute;
+}
+
+#test{
+    width: 200px;
+    height: 200px;
+    margin-top: 75px;
+    margin-left: -50px;
+    position: absolute;
+
+}
+
+#test2{
+    width: 200px;
+    position: absolute;
+    right: 400px;
+    margin-top: -214px;
+}
+
+@media screen and (max-width:850px)
+{
+    #test2{
+        width: 130px;
+        position: absolute;
+        right: 140px;
+        margin-top: -270px;
+    }
 }
 
 #text-historique p{
-    margin-left: 50px;
+    margin-left: 150px;
     color: #BD905A;
     text-indent: 50px;
 }

@@ -23,6 +23,7 @@ class GallerieController extends AbstractController
         return $this->render('gallerie/index.html.twig', [
             'showImages' => $showImages,
         ]);
+        
     }
 
     
