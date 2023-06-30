@@ -14,15 +14,24 @@ use App\Form\HistoriqueFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+use App\Repository\ImageRepository;
+
 class AdminHistoriqueController extends AbstractController
 {
     #[Route('/admin/historique', name: 'admin_historique')]
-    public function index(HistoriqueRepository $historiquerepo): Response
+    public function index(HistoriqueRepository $historiquerepo, ImageRepository $imageRepository): Response
     {
-        $showhistorique = $historiquerepo->findBy([],['id' => 'ASC']);
+        $historique = $historiquerepo->findBy([],['id' => 'ASC']);
+        $showHistoriques = array_chunk($historique, 3);
+
+        $images1  = $imageRepository->find(1);
+        $images2  = $imageRepository->find(2);
 
         return $this->render('historique/admin/admin_historique.html.twig', [
-            'showhistorique' => $showhistorique,
+            'showHistoriques' => $showHistoriques,
+            'images1' => $images1,
+            'images2' => $images2,
+
         ]);
     }
 

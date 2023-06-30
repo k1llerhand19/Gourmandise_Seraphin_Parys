@@ -12,7 +12,7 @@ use App\Form\ActualitesFormType;
 
 class AccueilController extends AbstractController
 {
-    #[Route('/accueil', name: 'app_accueil')]
+    #[Route('/', name: 'app_accueil')]
     public function index(ActualitesRepository $actualitesRepo): Response
     {
         $showActualites = $actualitesRepo->findBy([],['id' => 'DESC']);
