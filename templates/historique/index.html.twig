@@ -8,37 +8,34 @@
     <br><br>
     <div id="Body">
         <div class="container">
-        <div class="row">
-            <div id="text-historique">
-                {% for showHistorique in showHistoriques %}
-                        
-
-                    {% if loop.index is odd %}
-                        <div id='test'class="col-md-2">
-                            {% if images1 %}
-                                    <img src="{{asset('assets/Images/' ~ images1.name) }}" class="img-fluid">
-                            {% endif %}
-                        </div>
-                        <div class="col-md-10">
-                            {% for historique in showHistorique %}
-                                <p>{{ historique.text }}</p>                 
-                            {% endfor %}    
-                        </div>
-                    {% else %}
-                        <div class="col-md-10">
-                            {% for historique in showHistorique %}
-                                <p>{{ historique.text }}</p>                 
-                            {% endfor %}
-                        </div>
-                            {% if images1 %}
-                                    <img src="{{asset('assets/Images/' ~ images1.name) }}" id="test2" class="img-fluid" >
-                            {% endif %}
-                    {% endif %}
-
-                    
-                    <br>
-                {% endfor %}
-            </div>
+            <div class="row"id="text-historique">
+                    {% for showHistorique in showHistoriques %}
+                        {% if loop.index is odd %}
+                            <div class="col-2 col-sm-2">
+                                {% if images1 %}
+                                        <img src="{{asset('assets/Images/' ~ images1.name) }}" id="test" class="img-fluid">
+                                {% endif %}
+                            </div>
+                            <div class="col-10 col-sm-10">
+                                {% for historique in showHistorique %}
+                                    <p>{{ historique.text }}</p>                 
+                                {% endfor %}    
+                            </div>
+                        {% else %}
+                            <div class="col-10 col-sm-10">
+                                {% for historique in showHistorique %}
+                                    <p>{{ historique.text }}</p>                 
+                                {% endfor %}
+                            </div>
+                            <div <div class="col-2 col-sm-2">
+                                {% if images1 %}
+                                        <img src="{{asset('assets/Images/' ~ images1.name) }}" id="test2" class="img-fluid" >
+                                {% endif %}
+                            </div>
+                        {% endif %}              
+                        <br>
+                    {% endfor %}
+                </div>  
             </div>
         </div>
     </div>

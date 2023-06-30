@@ -39,32 +39,26 @@ body{
 
 #test{
     width: 200px;
-    height: 200px;
     margin-top: 75px;
     margin-left: -50px;
     position: absolute;
 
 }
-
 #test2{
     width: 200px;
+    margin-top: 50px;
     position: absolute;
-    right: 400px;
-    margin-top: -214px;
+
 }
 
-@media screen and (max-width:850px)
-{
-    #test2{
-        width: 130px;
-        position: absolute;
-        right: 140px;
-        margin-top: -270px;
-    }
+#test3{
+    margin-bottom: 50px;
+
 }
+
 
 #text-historique p{
-    margin-left: 150px;
+    margin-left: 10px;
     color: #BD905A;
     text-indent: 50px;
 }
