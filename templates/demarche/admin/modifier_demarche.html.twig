@@ -10,35 +10,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-4"></div>
-                <div class="col-4">
-                    <h1>Demarche</h1>
-                </div>
+                <div class="col-4"><h1>Demarche</h1></div>
             </div>
         </div>
-
         <div class="container">
             <div class="row" >
                 <div class="col-4" id="colonne-1"></div>
-                <div class="col 4" id="colonne-1">
-                    <br>
-                    <h3>Modifier :</h3>
-                </div>
+                <div class="col 4" id="colonne-1"><br><h3>Modifier :</h3></div>
             </div>
-
             <div class="row" >
                 <div class="col-4" id="colonne-1"></div>
                 <div class="col-4" id="colonne-1" >
-
                     {{form_start(form_demarche)}}
-
                     {{form_row(form_demarche.titre, {'attr' : {'placeholder' : "Nom de l'image"}})}}
                     {{form_row(form_demarche.description, {'attr' : {'placeholder' : "Nom de l'image"}})}}
-
-                    <button  type="submit" class="btn" id='btn'>
-                        Modifier
-                    </button>
-
-
+                    <button  type="submit" class="btn" id='btn'>Modifier</button>
                     {{form_end(form_demarche)}}
                 </div>
             </div>

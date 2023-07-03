@@ -1,47 +1,30 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Mention légale{% endblock %}
-
 {% form_theme form_mentionlegale 'bootstrap_4_layout.html.twig' %}
-
 {% block body %}
-    <br>
-    <div id="text">
-        <div class="container">
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4">
-                    <h1>Mention légale</h1>
-                </div>
+<br>
+<div id="text">
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4"><h1>Mention légale</h1></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col 4" id="colonne-1"><br><h3>Modifier :</h3></div>
+        </div>
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col-4" id="colonne-1" >
+                {{form_start(form_mentionlegale)}}
+                {{form_row(form_mentionlegale.Titre, {'attr' : {'placeholder' : "Modifier le Titre"}})}}
+                {{form_row(form_mentionlegale.Text, {'attr' : {'placeholder' : "Modifier le Text"}})}}
+                <button  type="submit" class="btn" id='btn'>Modifier</button>
+                {{form_end(form_mentionlegale)}}
             </div>
         </div>
-
-        <div class="container">
-            <div class="row" >
-                <div class="col-4" id="colonne-1"></div>
-                <div class="col 4" id="colonne-1">
-                    <br>
-                    <h3>Modifier :</h3>
-                </div>
-            </div>
-
-            <div class="row" >
-                <div class="col-4" id="colonne-1"></div>
-                <div class="col-4" id="colonne-1" >
-
-                    {{form_start(form_mentionlegale)}}
-
-                    {{form_row(form_mentionlegale.Titre, {'attr' : {'placeholder' : "Modifier le Titre"}})}}
-                    {{form_row(form_mentionlegale.Text, {'attr' : {'placeholder' : "Modifier le Text"}})}}
-
-                    <button  type="submit" class="btn" id='btn'>
-                        Modifier
-                    </button>
-
-
-                    {{form_end(form_mentionlegale)}}
-                </div>
-            </div>
-        </div> 
-    </div>
+    </div> 
+</div>
 {% endblock %}

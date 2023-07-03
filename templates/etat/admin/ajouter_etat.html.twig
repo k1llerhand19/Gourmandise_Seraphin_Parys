@@ -10,34 +10,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-4"></div>
-                <div class="col-4">
-                    <h1>Etat</h1>
-                </div>
+                <div class="col-4"><h1>Etat</h1></div>
             </div>
         </div>
-
         <div class="container">
             <div class="row" >
                 <div class="col-4" id="colonne-1"></div>
-                <div class="col 4" id="colonne-1">
-                    <br>
-                    <h3>ajouter :</h3>
-                </div>
+                <div class="col 4" id="colonne-1"><br><h3>ajouter :</h3></div>
             </div>
-
             <div class="row" >
                 <div class="col-4" id="colonne-1"></div>
                 <div class="col-4" id="colonne-1" >
-
                     {{form_start(form_etat)}}
-
                     {{form_row(form_etat.etat, {'attr' : {'placeholder' : "Saisir l'etat"}})}}
-
-                    <button  type="submit" class="btn" id='btn'>
-                        Enregistrer
-                    </button>
-
-
+                    <button  type="submit" class="btn" id='btn'>Enregistrer</button>
                     {{form_end(form_etat)}}
                 </div>
             </div>

@@ -12,9 +12,7 @@
                 {% for showHistorique in showHistoriques %}       
                     {% if loop.index is odd %}
                         <div class="col-2 col-sm-2">
-                            {% if images1 %}
-                                <img src="{{asset('assets/Images/' ~ images1.name) }}" id="test" class="img-fluid">
-                            {% endif %}
+                            {% if images1 %}<img src="{{asset('assets/Images/' ~ images1.name) }}" id="test" class="img-fluid">{% endif %}
                         </div>
                         <div class="col-10 col-sm-10">
                             {% for historique in showHistorique %}
@@ -24,13 +22,9 @@
                                     <form method="post" action="{{ path('historique.delete', {id: historique.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer l\'historique : \'{{ historique.text }}\' ?')">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ historique.id) }}">
-
-                                        <button class="btn btn-danger"> supprimer
-                                        <span class="bi bi-trash-fill"></span>
-                                        </button>
+                                        <button class="btn btn-danger"> supprimer<span class="bi bi-trash-fill"></span></button>
                                     </form>
-                                </center>
-                                <br>              
+                                </center><br>              
                             {% endfor %}    
                         </div>
                     {% else %}
@@ -42,24 +36,17 @@
                                     <form method="post" action="{{ path('historique.delete', {id: historique.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer l\'historique : \'{{ historique.text }}\' ?')">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ historique.id) }}">
-
-                                        <button class="btn btn-danger"> supprimer
-                                        <span class="bi bi-trash-fill"></span>
-                                        </button>
+                                        <button class="btn btn-danger"> supprimer<span class="bi bi-trash-fill"></span></button>
                                     </form>
-                                </center>
-                                <br>                   
+                                </center><br>                   
                             {% endfor %}
                         </div>
                         <div <div class="col-2 col-sm-2">
-                            {% if images2 %}
-                                    <img src="{{asset('assets/Images/' ~ images2.name) }}" id="test2" class="img-fluid" >
-                            {% endif %}
+                            {% if images2 %}<img src="{{asset('assets/Images/' ~ images2.name) }}" id="test2" class="img-fluid" >{% endif %}
                         </div>
                     {% endif %}              
                 <br>
                 {% endfor %}
-                
         <a id="text" href="{{ path('historique.add')}}">Ajoutez</a>
         </div>
     </div>

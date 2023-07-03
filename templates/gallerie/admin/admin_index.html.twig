@@ -7,17 +7,13 @@
     <div id="Body">
         <div class="container">
             <h1 id="titre">Galerie de nos produits</h1><br>
-            
             <div class="row">
-                    {% for image in showimage %}
-                        <div class="col-md-4">
-                            <img src="{{asset('assets/Images/' ~ image.name) }}" class="img-fluid" id="gallerie"> 
-                        </div> 
-                    {% endfor %}
+                {% for image in showimage %}
+                <div class="col-md-4"><img src="{{asset('assets/Images/' ~ image.name) }}" class="img-fluid" id="gallerie"> </div> 
+                {% endfor %}
             </div>
             <a id="text" href="{{ path('images.add')}}">Ajoutez</a>
         </div>
-
         <div class="col-lg-12">
             <div class="row">
                 <div class="table-responsive">
@@ -34,16 +30,11 @@
                                     <td class="text-nowrap" id="slide">{{ images.name }}</td>
                                     <td class="text-nowrap">
                                         <a id="text" href="{{ path('images.edit', {id: images.id}) }}">Modifier</a>
-                                        
                                         <form method="post" action="{{ path('images.delete', {id: images.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer l\'image de la gallerie : \'{{ images.name }}\' ?')">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ images.id) }}">
-
-                                            <button class="btn btn-danger"> supprimer
-                                                <span class="bi bi-trash-fill"></span>
-                                            </button>
+                                            <button class="btn btn-danger"> supprimer<span class="bi bi-trash-fill"></span></button>
                                         </form>
-
                                         <span class="badge text-bg-danger"></span>
                                     </td>
                                 </tr>

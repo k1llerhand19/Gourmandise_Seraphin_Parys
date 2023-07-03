@@ -15,7 +15,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row" >
                 <div class="col-4" id="colonne-1"></div>
@@ -24,22 +23,16 @@
                     <h3>ajouter :</h3>
                 </div>
             </div>
-
             <div class="row" >
                 <div class="col-4" id="colonne-1"></div>
                 <div class="col-4" id="colonne-1" >
-
                     {{form_start(form_actu)}}
-
                     {{form_row(form_actu.nomImage, {'attr' : {'placeholder' : "Nom de l'image"}})}}
                     {{form_row(form_actu.Titre, {'attr' : {'placeholder' : "Titre a afficher"}})}}
                     {{form_row(form_actu.Description, {'attr' : {'placeholder' : "Description"}})}}
-
                     <button  type="submit" class="btn" id='btn'>
                         Enregistrer
                     </button>
-
-
                     {{form_end(form_actu)}}
                 </div>
             </div>

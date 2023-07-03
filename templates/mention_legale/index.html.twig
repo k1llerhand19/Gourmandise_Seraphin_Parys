@@ -1,18 +1,15 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Mention Légales{% endblock %}
-
 {% block body %}
 <br>
 <h1 id='titre'>Mention Légales</h1>
 <br><br>
 <div id="Body">
-        <div id="text">
-            {% for mention_legale in showMentionLegale %}
-                <H2>{{ mention_legale.Titre }}</H2>
-                <p>{{ mention_legale.Text }}</p>
-                    <br>
-            {% endfor %}
-        </div>
+    <div id="text">
+        {% for mention_legale in showMentionLegale %}
+            <H2>{{ mention_legale.Titre }}</H2>
+            <p>{{ mention_legale.Text }}</p><br>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

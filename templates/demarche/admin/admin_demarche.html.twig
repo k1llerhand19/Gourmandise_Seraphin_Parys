@@ -6,7 +6,6 @@
 <br>
 <h1 id='titre'>Démarche</h1>
 <br><br>
-
 <div class="container responsive">
     <div class="row">
         {% for demarche in showdemarche %}
@@ -15,16 +14,13 @@
                     <h1>{{demarche.titre}}</h1>
                     <p>{{demarche.description}}</p>
                     <center>
-                    <a id="text-noir" href="{{ path('demarche.edit', {id: demarche.id}) }}">Modifier</a>
-                    <form method="post" action="{{ path('demarche.delete', {id: demarche.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer la demarche : \'{{ demarche.description }}\' ?')">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ demarche.id) }}">
-
-                        <button class="btn btn-danger"> supprimer
-                        <span class="bi bi-trash-fill"></span>
-                        </button>
-                    </form>
-                </center>
+                        <a id="text-noir" href="{{ path('demarche.edit', {id: demarche.id}) }}">Modifier</a>
+                        <form method="post" action="{{ path('demarche.delete', {id: demarche.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer la demarche : \'{{ demarche.description }}\' ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ demarche.id) }}">
+                            <button class="btn btn-danger"> supprimer <span class="bi bi-trash-fill"></span></button>
+                        </form>
+                    </center>
                 </div>
                 <br>
             </div>
