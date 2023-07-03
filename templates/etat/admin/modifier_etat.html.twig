@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etat{% endblock %}
+
+{% form_theme form_etat 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <br>
+    <div id="text">
+        <div class="container">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <h1>Etat</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row" >
+                <div class="col-4" id="colonne-1"></div>
+                <div class="col 4" id="colonne-1">
+                    <br>
+                    <h3>Modifier :</h3>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-4" id="colonne-1"></div>
+                <div class="col-4" id="colonne-1" >
+
+                    {{form_start(form_etat)}}
+
+                    {{form_row(form_etat.etat, {'attr' : {'placeholder' : "Nom de l'etat"}})}}
+
+                    <button  type="submit" class="btn" id='btn'>
+                        Modifier
+                    </button>
+
+
+                    {{form_end(form_etat)}}
+                </div>
+            </div>
+        </div> 
+    </div>
+{% endblock %}

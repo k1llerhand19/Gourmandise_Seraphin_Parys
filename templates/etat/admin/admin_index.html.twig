@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+    
+    
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="align-middle text-center" colspan="2"><h1 id='titre'>Etat</h1></th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    <tr class="align-middle text-center">
+                        <th class="text-nowrap" id="slide">Etat</th>
+                        <th class="text-nowrap" id="slide">Action</th>
+                    </tr>
+
+                    {% for Etat in showEtat %}
+
+                    <tr class="align-middle text-center">
+                        <td class="text-nowrap" id="slide">{{ Etat.etat }}</td>
+                        <td class="text-nowrap">
+
+                            <a id="text" href="{{ path('etat.edit', {id: Etat.id}) }}">Modifier</a>
+                            
+                            <form method="post" action="{{ path('etat.delete', {id: Etat.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer le contact : \'{{ Etat.etat }}\' ?')">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ Etat.id) }}">
+
+                                <button class="btn btn-danger"> supprimer
+                                    <span class="bi bi-trash-fill"></span>
+                                </button>
+
+                            </form><span class="badge text-bg-danger"></span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <a id="text" href="{{ path('etat.add')}}">Ajoutez</a>
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}
