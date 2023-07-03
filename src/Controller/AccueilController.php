@@ -21,4 +21,12 @@ class AccueilController extends AbstractController
             'showActualites' => $showActualites,
         ]);
     }
+
+    #[Route('/menu', name: 'app_menu')]
+    public function menu(): Response
+    {
+        return $this->render('menu/index.html.twig', [
+            'controller_name' => 'MenuController',
+        ]);
+    }
 }
