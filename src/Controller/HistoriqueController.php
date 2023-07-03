@@ -23,7 +23,6 @@ class HistoriqueController extends AbstractController
         $images1  = $imageRepository->find(1);
         $images2  = $imageRepository->find(2);
         
-
         return $this->render('historique/index.html.twig', [
             'showHistoriques' => $showHistoriques,
             'images1' => $images1,

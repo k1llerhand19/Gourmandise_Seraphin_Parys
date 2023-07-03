@@ -41,7 +41,6 @@ class AdminAccueilController extends AbstractController
             ]);
         }
 
-
         return $this->render('accueil/admin/ajouter_actualites.html.twig', [
             'form_actu' => $form_actu->createView()
         ]);
@@ -80,5 +79,4 @@ class AdminAccueilController extends AbstractController
             'form_actu' => $form_actu->createView(),
         ]);
     }
-
 }

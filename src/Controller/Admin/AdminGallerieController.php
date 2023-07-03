@@ -46,8 +46,6 @@ class AdminGallerieController extends AbstractController
         ]);
     }
 
-
-
     #[Route('/admin/gallerie/{id}', name: 'images.delete', methods: ['DELETE'])]
     public function delete(Image $image, EntityManagerInterface $entityManager, Request $request): Response
     {
@@ -59,10 +57,6 @@ class AdminGallerieController extends AbstractController
 
         return $this->redirectToRoute('admin_gallerie');
     }
-
-
-
-
 
     #[Route('/admin/gallerie/{id}', name: 'images.edit', methods: ['GET', 'POST'])]
     public function ModifierActu(Image $image, Request $request, EntityManagerInterface $manager): Response

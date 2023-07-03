@@ -35,7 +35,6 @@ class AdminHistoriqueController extends AbstractController
         ]);
     }
 
-
     #[Route('/admin/historique/ajouter', name: 'historique.add')]
     public function AjouterActuRequest(Request $request,  EntityManagerInterface $manager): Response
     {   $historique = new Historique();

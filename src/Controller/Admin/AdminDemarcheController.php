@@ -45,9 +45,6 @@ class AdminDemarcheController extends AbstractController
         ]);
     }
 
-
-
-    
     #[Route('/admin/demarche/{id}', name: 'demarche.delete', methods: ['DELETE'])]
     public function delete(Demarche $demarche, EntityManagerInterface $entityManager, Request $request): Response
     {
@@ -59,10 +56,6 @@ class AdminDemarcheController extends AbstractController
 
         return $this->redirectToRoute('admin_demarche');
     }
-
-
-
-
 
     #[Route('/admin/demarche/{id}', name: 'demarche.edit', methods: ['GET', 'POST'])]
     public function ModifierActu(Demarche $demarche, Request $request, EntityManagerInterface $manager): Response

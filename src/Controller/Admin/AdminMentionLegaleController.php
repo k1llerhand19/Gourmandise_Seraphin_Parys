@@ -10,7 +10,6 @@ use App\Entity\Mentionlegale;
 use App\Repository\MentionlegaleRepository;
 use App\Form\MentionlegaleFormType;
 
-
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 

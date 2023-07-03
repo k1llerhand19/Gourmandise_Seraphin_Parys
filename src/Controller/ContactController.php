@@ -21,7 +21,6 @@ class ContactController extends AbstractController
     public function index(Request $request, EntityManagerInterface $manager, EtatRepository $etatRepository): Response
     {
         $etat = $etatRepository->find(1);
-
         $contact = new Contact();
         $contact->setEtat($etat);
         

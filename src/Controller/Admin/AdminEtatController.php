@@ -13,7 +13,6 @@ use App\Form\EtatFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-
 class AdminEtatController extends AbstractController
 { 
     #[Route('/etat', name: 'app_etat')]
