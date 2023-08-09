@@ -14,11 +14,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    public function index(Request $request, EntityManagerInterface $manager, EtatRepository $etatRepository): Response
+    public function index(Request $request, EntityManagerInterface $manager, EtatRepository $etatRepository, MailerInterface $mailer): Response
     {
         $etat = $etatRepository->find(1);
         $contact = new Contact();
@@ -33,10 +35,14 @@ class ContactController extends AbstractController
             $manager->persist($contact);
             $manager->flush();
 
-            $this->addFlash(
-                'success',
-                'Votre demande a bien été envoyée'
-            );
+            $email = (new Email())
+            ->from($contact->getEmail())
+            ->to('nathan.corberan19300@gmail.com')
+            ->subject($contact->getSubject())
+            ->html($contact->getMessage());
+
+        
+        $mailer->send($email);
 
             return $this->redirectToRoute('app_contact');
         }
