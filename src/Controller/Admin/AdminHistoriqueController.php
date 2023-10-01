@@ -55,6 +55,10 @@ class AdminHistoriqueController extends AbstractController
         ]);
     }
 
+
+
+
+    
     #[Route('/admin/historique/{id}', name: 'historique.delete', methods: ['DELETE'])]
     public function delete(Historique $historique, EntityManagerInterface $entityManager, Request $request): Response
     {
